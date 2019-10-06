@@ -1,6 +1,4 @@
-html, body {
-  position: relative;
-  z-index: -2;
+html {
   margin: 0;
   padding:0;
   height: 100%;
