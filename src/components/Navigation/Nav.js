@@ -1,11 +1,41 @@
-import React from 'react';
+import React from "react";
 
-const Navigation = ({onButtonSubmit}) => {
-    return(
-        <nav style={{display: 'flex', justifyContent: 'flex-end'}}>
-            <p className='signOut f4 dim link pa2 ma3 shadow-4 br3 white-80 pointer' onClick={onButtonSubmit}>Sign Out</p>
-        </nav>
-    );
+const Navigation = ({ onRouteChange, isSignedIn }) => {
+    if (isSignedIn) {
+        return (
+            <nav
+                className="ph4 pt1"
+                style={{ display: "flex", justifyContent: "flex-end" }}
+            >
+                <p
+                    className="b black-50 input-reset dim pointer f5 dib br2"
+                    onClick={() => onRouteChange("signin")}
+                >
+                    Sign Out
+                </p>
+            </nav>
+        );
+    } else {
+        return(
+            <nav
+                className="ph4 pt1"
+                style={{ display: "flex", justifyContent: "flex-end" }}
+            >
+                <p
+                    className="b black-50 input-reset dim pointer f5 dib br2"
+                    onClick={() => onRouteChange("signin")}
+                >
+                    Sign In
+                </p>
+                <p
+                    className="b black-50 input-reset dim pointer f5 dib br2 ml3"
+                    onClick={() => onRouteChange("register")}
+                >
+                    Register
+                </p>
+            </nav>
+        );
+    }
 };
 
 export default Navigation;

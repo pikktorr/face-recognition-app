@@ -1,15 +1,20 @@
 import React from "react";
 
-const SignIn = ({onRouteChange}) => {
+const SignIn = ({ onRouteChange }) => {
     return (
-        <article class="mw6 center bg-white-70 br3 pa3 pa4-ns mv3 ba b--black-10 shadow-2" style={{maxWidth: '25rem'}}>
-            <main className="pa4 black-80">
+        <article
+            className="mw6 center bg-white br3 pa3 pa4-ns mv3 ba-10 shadow-2"
+            style={{ maxWidth: "25rem" }}
+        >
+            <main className="pa4 black-70">
                 <form className="measure">
                     <fieldset
                         id="sign_up"
                         className="ba b--transparent ph0 mh0"
                     >
-                        <legend className="f2 fw6 ph0 mh0 center">Sign In</legend>
+                        <legend className="f2 fw6 ph0 mh0 center">
+                            Sign In
+                        </legend>
                         <div className="mt3">
                             <label
                                 className="db fw6 lh-copy f6"
@@ -18,7 +23,7 @@ const SignIn = ({onRouteChange}) => {
                                 Email
                             </label>
                             <input
-                                className="pa2 input-reset ba bg-transparent w-100"
+                                className="pa2 input-reset ba b--black-50 bg-transparent w-100"
                                 type="email"
                                 name="email-address"
                                 id="email-address"
@@ -29,7 +34,7 @@ const SignIn = ({onRouteChange}) => {
                                 Password
                             </label>
                             <input
-                                className="b pa2 input-reset ba bg-transparent w-100"
+                                className="b pa2 input-reset ba b--black-50 bg-transparent w-100"
                                 type="password"
                                 name="password"
                                 id="password"
@@ -38,16 +43,20 @@ const SignIn = ({onRouteChange}) => {
                     </fieldset>
                     <div className="center">
                         <input
-                            onClick={onRouteChange}
-                            className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
+                            onClick={() => onRouteChange("home")}
+                            className="b black-70 ph3 pv2 input-reset ba b--black-50 bg-transparent dim pointer f5 dib bw1 br-pill"
+                            style={{ outline: "none" }}
                             type="submit"
                             value="Sign in"
                         />
                     </div>
                     <div className="lh-copy mt3 center">
-                        <a href="#0" className="f6 link dim black db">
+                        <p
+                            onClick={() => onRouteChange("register")}
+                            className="f5 link dim black-70 db pointer"
+                        >
                             Register
-                        </a>
+                        </p>
                     </div>
                 </form>
             </main>

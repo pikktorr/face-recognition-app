@@ -1,13 +1,22 @@
 html {
   margin: 0;
-  padding:0;
+  padding: 0;
   height: 100%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background:linear-gradient(0deg,rgba(25, 111, 168, 0.8), rgba(71, 98, 116, 0.8)); 
+  background:linear-gradient(0deg, rgba(0, 202, 135, 0.8), rgba(25, 111, 168, 0.8)); 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 button{
   cursor: pointer;
+}
+
+article {
+  display: flex;
+  justify-content: center;
+  margin:0;
+  padding: 0;
 }
 
 .center {
