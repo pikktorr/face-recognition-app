@@ -82,16 +82,17 @@ class App extends Component {
     };
 
     render() {
+        const { imageUrl, route, box } = this.state; //kiváltja a this.state-eket a lenti funkcióban
         return (
             <div className="App">
                 <Particles className="particles" params={particlesOptions} />
-                {this.state.route === "signin" ? (
+                {route === "signin" ? (
                     <div>
                         <Navigation onRouteChange={this.onRouteChange} />
                         <Logo />
                         <SignIn onRouteChange={this.onRouteChange} />
                     </div>
-                ) : this.state.route === "register" ? (
+                ) : route === "register" ? (
                     <div>
                         <Navigation onRouteChange={this.onRouteChange} />
                         <Logo />
@@ -114,8 +115,8 @@ class App extends Component {
                                     onButtonSubmit={this.onButtonSubmit}
                                 />
                                 <FaceRecognition
-                                    imageUrl={this.state.imageUrl}
-                                    box={this.state.box}
+                                    imageUrl={imageUrl}
+                                    box={box}
                                 />
                             </div>
                         </div>

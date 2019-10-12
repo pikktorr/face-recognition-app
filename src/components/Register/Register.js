@@ -4,7 +4,7 @@ const Register = ({onRouteChange}) => {
     return (
         <article className="mw6 center bg-white br3 pa3 pa4-ns mv3 ba-10 shadow-2" style={{maxWidth: '25rem'}}>
             <main className="pa4 black-70">
-                <form className="measure">
+                <div className="measure">
                     <fieldset
                         id="sign_up"
                         className="ba b--transparent ph0 mh0"
@@ -13,7 +13,7 @@ const Register = ({onRouteChange}) => {
                         <div className="mt3">
                             <label
                                 className="db fw6 lh-copy f6"
-                                for="name"
+                                htmlFor="name"
                             >Name
                             </label>
                             <input
@@ -26,7 +26,7 @@ const Register = ({onRouteChange}) => {
                         <div className="mt3">
                             <label
                                 className="db fw6 lh-copy f6"
-                                for="email-address"
+                                htmlFor="email-address"
                             >Email
                             </label>
                             <input
@@ -37,7 +37,7 @@ const Register = ({onRouteChange}) => {
                             />
                         </div>
                         <div className="mv3">
-                            <label className="db fw6 lh-copy f6" for="password">
+                            <label className="db fw6 lh-copy f6" htmlFor="password">
                                 Password
                             </label>
                             <input
@@ -56,7 +56,7 @@ const Register = ({onRouteChange}) => {
                             value="Register"
                         />
                     </div>
-                </form>
+                </div>
             </main>
         </article>
     );
