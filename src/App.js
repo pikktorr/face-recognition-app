@@ -26,24 +26,26 @@ const particlesOptions = {
   }
 };
 
+const initialState = {
+  input: "",
+  imageUrl: "",
+  box: {},
+  route: "signin",
+  isSignedIn: false,
+  user: {
+    id: "",
+    name: "",
+    email: "",
+    password: "",
+    entries: 0,
+    joined: ""
+  }
+};
+
 class App extends Component {
   constructor() {
     super();
-    this.state = {
-      input: "",
-      imageUrl: "",
-      box: {},
-      route: "signin",
-      isSignedIn: false,
-      user: {
-        id: "",
-        name: "",
-        email: "",
-        password: "",
-        entries: 0,
-        joined: ""
-      }
-    };
+    this.state = initialState;
   }
 
   loadUser = data => {
@@ -66,7 +68,6 @@ class App extends Component {
   calculateFaceLocation = data => {
     const clarifaiFace =
       data.outputs[0].data.regions[0].region_info.bounding_box;
-    console.log(clarifaiFace);
     const image = document.getElementById("inputimage");
     const width = Number(image.width);
     const height = Number(image.height);
@@ -91,10 +92,11 @@ class App extends Component {
               id: this.state.user.id
             })
           })
-          .then(response=>response.json())
-          .then(count=>{
-            this.setState(Object.assign(this.state.user, { entries: count}))
-          })
+            .then(response => response.json())
+            .then(count => {
+              this.setState(Object.assign(this.state.user, { entries: count }));
+            })
+            .catch(console.log);
         }
         this.displayFaceBox(this.calculateFaceLocation(response));
       })
@@ -102,11 +104,13 @@ class App extends Component {
   };
 
   displayFaceBox = box => {
-    console.log(box);
     this.setState({ box: box });
   };
 
   onRouteChange = route => {
+    if (route === "signin") {
+      this.setState(initialState);
+    }
     this.setState({ route: route });
   };
 
