@@ -50,7 +50,7 @@ class Register extends React.Component {
         <main className="pa4 black-70">
           <div className="measure">
             <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-              <legend className="f2 fw6 ph0 mh0 center">Register</legend>
+              <legend className="f2 fw6 ph0 mh0 center">{"{ smart-brainer }"}</legend>
               <div className="mt3">
                 <label className="db fw6 lh-copy f6" htmlFor="name">
                   Name
